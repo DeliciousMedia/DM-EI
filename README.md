@@ -8,7 +8,5 @@ It is designed to be used with our [WordPress layout](https://github.com/Delicio
 
 Install via Composer (`composer require deliciousmedia/dm-ei`), or just clone/copy the file to your mu-plugins folder.
 
-## Usage
-
 ---
 Built by the team at [Delicious Media](https://www.deliciousmedia.co.uk/), a specialist WordPress development agency based in Sheffield, UK.
