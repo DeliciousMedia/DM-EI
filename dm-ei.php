@@ -3,7 +3,7 @@
  * Plugin Name: DM Environment Indicator
  * Plugin URI: https://github.com/DeliciousMedia/DM-EI
  * Description: Add a colour coded indicator to the admin bar to indicate which environment we're in.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Delicious Media Limited
  * Author URI: https://www.deliciousmedia.co.uk
  * Text Domain: dm-ei
@@ -23,9 +23,12 @@ defined( 'DM_ENVIRONMENT' ) || define( 'DM_ENVIRONMENT', 'UNKNOWN' );
  * @return void
  */
 function dmei_add_adminbar_node( $wp_admin_bar ) {
+
+	$message = apply_filters( 'dmei_environment_message', strtoupper( DM_ENVIRONMENT ) );
+
 	$wp_admin_bar->add_node(
 		[
-			'title'  => esc_html( strtoupper( DM_ENVIRONMENT ) ),
+			'title'  => esc_html( $message ),
 			'id'     => 'dmei',
 			'parent' => 'top-secondary',
 			'meta'   => [
@@ -83,4 +86,3 @@ function dmei_insert_css() {
 }
 add_action( 'wp_head', 'dmei_insert_css' );
 add_action( 'admin_head', 'dmei_insert_css' );
-
